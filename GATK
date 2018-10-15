@@ -1,1 +1,6 @@
-/gpfs/hps/soft/rhel7/gatk/4.0.4.0/gatk Mutect2 -R /gpfs/home/s/i/siwxu/Carbonate/database/hg38.fa -I /N/dc2/projects/ngs/projects/iucmg/NovaSeq/NovaSeq_012/Analysis/mergedBam/0661-5_CD138Plus-a.hg38/0661-5_CD138Plus-a.hg38.sorted.chrM-removed.MQ10filtered.dedup.bam -tumor 0661-5_CD138Plus-a -O /gpfs/home/s/i/siwxu/Carbonate/ASO/MM/gatk_out/5_CD138Plus-a.vcf
+#make .fai
+samtools faidx .fa 
+#make .dict
+gatk CreateSequenceDictionary -R .fa 
+#gatk call snp from single sample
+/gpfs/hps/soft/rhel7/gatk/4.0.4.0/gatk Mutect2 -R hg38.fa -I A.bam -tumor A -O A.vcf
