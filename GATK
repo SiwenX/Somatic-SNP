@@ -4,3 +4,6 @@ samtools faidx .fa
 gatk CreateSequenceDictionary -R .fa 
 #gatk call snp from single sample
 /gpfs/hps/soft/rhel7/gatk/4.0.4.0/gatk Mutect2 -R hg38.fa -I A.bam -tumor A -O A.vcf
+#gatk call snp from tumor and tissue sample
+/gpfs/hps/soft/rhel7/gatk/4.0.4.0/gatk Mutect2 -R /gpfs/home/s/i/siwxu/Carbonate/database/hg38.fa -I /N/dc2/projects/ngs/users/siwxu/projects/myeloma/3/3_tumor.sort.bam -I /N/dc2/projects/ngs/users/siwxu/projects/myeloma/3/3_normal.sort.bam -tumor 0661-3_CD138Plus-a -normal 0661-3_CD138Minus-a -O /N/dc2/projects/ngs/users/siwxu/projects/myeloma/3/3_somatic.vcf -bamout /N/dc2/projects/ngs/users/siwxu/projects/myeloma/3/3_tumor_normal.bam
+
