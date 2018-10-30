@@ -1,7 +1,10 @@
+##################Call_somatic_mutation_pipeline
+##1. make .fai & .dict file for reference sequence file which is GATK needed
 #make .fai
 samtools faidx .fa 
 #make .dict
 gatk CreateSequenceDictionary -R .fa 
+##2. 
 #gatk call snp from single sample
 /gpfs/hps/soft/rhel7/gatk/4.0.4.0/gatk Mutect2 -R hg38.fa -I A.bam -tumor A -O A.vcf
 #gatk call snp from tumor and tissue sample
