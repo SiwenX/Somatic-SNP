@@ -6,7 +6,7 @@
 #PBS -M siwxu@iu.edu
 #PBS -m abe
 
-/gpfs/hps/soft/rhel7/gatk/4.0.4.0/gatk \
+/gpfs/hps/soft/rhel7/gatk/4.0.4.0/gatk Mutect2 \
 -R /gpfs/home/s/i/siwxu/Carbonate/database/hg38.fa \
 -I /N/dc2/projects/ngs/users/siwxu/projects/myeloma/3/3_normal.sort.bam \
 -tumor 3_normal \
