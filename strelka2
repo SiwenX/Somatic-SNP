@@ -1,0 +1,13 @@
+#!/bin/bash
+
+#PBS -l nodes=1:ppn=8
+#PBS -l walltime=48:00:00
+#PBS -l vmem=32gb
+#PBS -M siwxu@iu.edu
+#PBS -m abe
+
+
+cd /gpfs/home/s/i/siwxu/Carbonate/tool/strelka-2.9.2.centos6_x86_64/bin
+./configureStrelkaSomaticWorkflow.py --normalBam /N/dc2/projects/ngs/users/siwxu/projects/myeloma/5/5_normal_reheader.sort.bam --tumorBam /N/dc2/projects/ngs/users/siwxu/projects/myeloma/5/5_tumor_reheader.sort.bam --ref /gpfs/home/s/i/siwxu/Carbonate/database/hg38.fa --runDir demo_somatic
+#
+demo_somatic/runWorkflow.py -m local -j 20
