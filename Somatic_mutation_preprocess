@@ -5,7 +5,7 @@ samtools faidx .fa
 #make .dict
 gatk CreateSequenceDictionary -R .fa 
 ##2. change SM to the same & merge bam file 
-samtools  view -H the1.bam > header.txt
+samtools view -H the1.bam > header.txt
 samtools reheader header.txt the1.bam
 ##3. 
 #gatk call snp from single sample
