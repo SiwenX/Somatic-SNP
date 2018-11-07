@@ -1,0 +1,12 @@
+#!/bin/bash
+
+#PBS -l nodes=1:ppn=8
+#PBS -l walltime=48:00:00
+#PBS -l vmem=32gb
+#PBS -M siwxu@iu.edu
+#PBS -m abe
+
+#3. Estimate cross-sample contamination using GetPileupSummaries and CalculateContamination
+/gpfs/hps/soft/rhel7/gatk/4.0.4.0/gatk GetPileupSummaries -I /N/dc2/projects/ngs/users/siwxu/projects/myeloma/8/8_tumor.sort.bam \
+-V /N/dc2/projects/ngs/users/siwxu/projects/myeloma/8/8_somatic3.vcf \
+-O /N/dc2/projects/ngs/users/siwxu/projects/myeloma/8/8_tumor_getpileupsummaries.table
