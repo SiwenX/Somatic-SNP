@@ -1,0 +1,7 @@
+
+
+
+gatk FilterMutectCalls \
+-V somatic_m2.vcf.gz \
+--contamination-table tumor_calculatecontamination.table \
+-O 9_somatic_oncefiltered.vcf.gz
