@@ -1,7 +1,13 @@
+#!/bin/bash
 
+#PBS -l nodes=1:ppn=16
+#PBS -l walltime=48:00:00
+#PBS -l vmem=32gb
+#PBS -M siwxu@iu.edu
+#PBS -m abe
 
-
-gatk FilterMutectCalls \
--V somatic_m2.vcf.gz \
---contamination-table tumor_calculatecontamination.table \
--O 9_somatic_oncefiltered.vcf.gz
+##
+/gpfs/hps/soft/rhel7/gatk/4.0.4.0/gatk FilterMutectCalls \
+-V /N/dc2/projects/ngs/users/siwxu/projects/myeloma/2/2_somatic3.vcf \
+--contamination-table /N/dc2/projects/ngs/users/siwxu/projects/myeloma/2/2_tumor_getpileupsummaries.table \
+-O 2_somatic_oncefiltered.vcf.gz
